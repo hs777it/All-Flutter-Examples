@@ -1,0 +1,56 @@
+// import 'package:flutter/material.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+
+
+// // Shared preferences & Cache Helper 
+// // Singleton design pattern & Service Locator
+
+// class CacheHelper {
+//   static late SharedPreferences _prefs;
+
+//   init() async {
+//     _prefs = await SharedPreferences.getInstance();
+//   }
+
+//   Future<bool> saveData({required String key, required dynamic value}) async {
+//     if (value is int) {
+//       return await _prefs.setInt(key, value);
+//     } else if (value is double) {
+//       return await _prefs.setDouble(key, value);
+//     } else if (value is bool) {
+//       return await _prefs.setBool(key, value);
+//     } else if (value is String) {
+//       return await _prefs.setString(key, value);
+//     } else {
+//       return await _prefs.setStringList(key, value);
+//     }
+//   }
+
+//   dynamic getData({required String key}) {
+//     return _prefs.get(key);
+//   }
+
+//   Future<bool> removeData({required String key}) async {
+//     return await _prefs.remove(key);
+//   }
+
+//   Future<bool> clearData() async {
+//     return await _prefs.clear();
+//   }
+
+//   bool containsData({required String key}) {
+//     return _prefs.containsKey(key);
+//   }
+// }
+
+// class Example {
+//   void main() async {
+//     WidgetsFlutterBinding.ensureInitialized();
+//     await CacheHelper().init();
+//     CacheHelper().saveData(key: "key", value: "value");
+//     CacheHelper().getData(key: "key");
+//     CacheHelper().containsData(key: "key");
+//     CacheHelper().removeData(key: "key");
+//     CacheHelper().clearData();
+//   }
+// }
